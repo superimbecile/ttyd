@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ARG TARGETARCH
+ENV TARGETARCH=x86_64
 COPY ./dist/${TARGETARCH}/ttyd /usr/bin/ttyd
 RUN apt-get update && apt-get install -y --no-install-recommends tini && rm -rf /var/lib/apt/lists/*
 
